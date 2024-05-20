@@ -1,7 +1,8 @@
 FROM alpine:latest
 
 RUN apk update && apk upgrade
-RUN apk add --no-cache gcc python3-dev git py3-pip ffmpeg megatools
+RUN apk add --no-cache gcc python3-dev git py3-pip ffmpeg
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ megatools
 RUN pip3 install -U pip
 RUN mkdir /app/
 WORKDIR /app/
